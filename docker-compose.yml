@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    command: bash start.sh
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/websocket-backend
+    environment:
+      NODE_ENV: development
+      SERVER_PORT: 3000
+      MONGO_URL: mongodb://websocket:websocket@db:27017/websocket?authSource=admin
+    depends_on:
+      - db
+    networks:
+      - websocket-net
+  db:
+    image: mongo:6.0.4
+    environment:
+      MONGO_INITDB_DATABASE: websocket
+      MONGO_INITDB_ROOT_USERNAME: websocket
+      MONGO_INITDB_ROOT_PASSWORD: websocket
+    ports:
+      - "27017:27017"
+    networks:
+      - websocket-net
+
+networks:
+  websocket-net:
+    name: websocket-net
+    external: true
+
+volumes:
+  db:
