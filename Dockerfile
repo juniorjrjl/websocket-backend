@@ -12,4 +12,4 @@ COPY . .
 
 RUN npm i ts-node-dev@~2.0.0 -g
 
-#RUN npm i
+RUN npm i

@@ -8,9 +8,9 @@ dotenv.config()
 
 const app = express()
 
-app.use(cors)
+app.use(cors())
 app.use(express.json())
 app.use(routes)
 connect()
 
-app.listen(process.env.PORT!, () => console.log(`Application started on http://localhost:${process.env.PORT!}`))
+app.listen(process.env.SERVER_PORT!, () => console.log(`Application started on http://localhost:${process.env.SERVER_PORT!}`))
