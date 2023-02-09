@@ -1,7 +1,5 @@
 # API desenvolvida para estudo de websocket no curso Black do OneBitCode
 
-Api de vagas de emprego
-
 ![technology Node](https://img.shields.io/badge/techonolgy-Node-success)
 ![technology MongoDB](https://img.shields.io/badge/techonolgy-MongoDB-blue)
 ![techonolgy Express](https://img.shields.io/badge/techonolgy-Express-brightgreen)
