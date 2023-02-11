@@ -12,7 +12,7 @@ dotenv.config()
 
 const app = express()
 const server = http.createServer(app)
-const io = new Server(server, { cors: { origin: "*" } })
+const io = new Server(server, { cors: { origin: '*'} })
 
 app.use(cors())
 app.use(express.json())
@@ -60,4 +60,4 @@ io.on("connection", (socket) =>{
 })
 connect()
 
-app.listen(process.env.SERVER_PORT!, () => console.log(`Application started on http://localhost:${process.env.SERVER_PORT!}`))
+server.listen(process.env.SERVER_PORT!, () => console.log(`Application started on http://localhost:${process.env.SERVER_PORT!}`))
